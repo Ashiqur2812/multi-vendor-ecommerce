@@ -37,10 +37,7 @@ const BrandSchema = new Schema(
       },
       default: {},
     },
-  },
-  {
-    timestamps: true,
-  }
+  }, { timestamps: true }
 );
 
 BrandSchema.pre("save", async function (next) {
