@@ -23,36 +23,18 @@ const checkPermission = ({ permission, abacCheck = null }) => {
         populate: { path: "permissions" },
       });
     }
-    // user = await User.findById(req.user.userId)
-    //   // .populate("permissions")
-    //   .populate({
-    //     path: "role",
-    //     populate: { path: "permissions" },
-    //   });
 
     const rolePermissions = user.role?.permissions || [];
     const userPermissions = user.permissions || [];
-
-    // console.log("role only", rolePermissions);
-    // console.log("user role only", userPermissions);
 
     const allPermissions = new Set([
       ...rolePermissions.map((p) => p.name),
       ...userPermissions.map((p) => p.name),
     ]);
 
-    // console.log("permission", permission);
-
-    // console.log("all permissions", allPermissions);
-    // RBAC check
     if (!allPermissions.has(permission)) {
       throw new ApiError(403, "Access denied (RBAC)");
     }
-
-    // ABAC check (optional)
-    // if (abacCheck && !(await abacCheck(user, req))) {
-    //   throw new ApiError(403, "Access denied (ABAC)");
-    // }
 
     if (abacCheck) {
       for (const [key, value] of Object.entries(abacCheck)) {
