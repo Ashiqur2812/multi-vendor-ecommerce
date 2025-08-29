@@ -5,7 +5,6 @@ const { ApiVersion } = require("../../../../constants");
 const validateFieldsCheck = require("../../../../utils/validateFieldsCheck");
 
 const createAddressController = asyncHandler(async (req, res) => {
-  // Destructuring request body for address details
   const {
     addressName,
     addressLine1,
@@ -28,9 +27,6 @@ const createAddressController = asyncHandler(async (req, res) => {
     "postalCode",
     "phoneNumber",
   ]);
-
-  // Fetching the user by user ID from request
-  // const user = await User.findById({ _id: req.user.userId });
 
   // Creating a new address instance
   const address = new Address({
