@@ -33,8 +33,8 @@ A powerful and scalable RESTful API built with Node.js and Express for managing 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/muhammadranju/multi-vendor-ecommerce-api.git
-cd multi-vendor-ecommerce-api
+git clone https://github.com/Ashiqur2812/multi-vendor-ecommerce.git
+cd multi-vendor-ecommerce
 ```
 
 ### 2. Install Dependencies
@@ -215,10 +215,10 @@ npm test
 
 ## 📄 License
 
-MIT License © 2025 [Muhammad Ranju](https://github.com/muhammadranju)
+MIT License © 2025 [Muhammad Ashiqur Rahaman](https://github.com/Ashiqur2812)
 
 ---
 
 ## 📫 Contact
 
-For inquiries or support, please contact \[[mdranju23@gmail.com](mailto:mdranju23@gmail.com)]
+For inquiries or support, please contact \[[ashiqur2812@gmail.com](mailto:ashiqur2812@gmail.com)]
