@@ -2,10 +2,9 @@ const { Schema, model } = require("mongoose");
 const { ModelRefNames } = require("../../constants");
 const commentSchema = new Schema(
   {
-    // Content of the comment
     content: {
       type: String,
-      required: true,
+      required: [true, 'Content is required'],
       minLength: 5,
       maxLength: 500,
     },
