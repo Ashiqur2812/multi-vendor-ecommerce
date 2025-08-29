@@ -7,9 +7,6 @@ const { ROLES, PERMISSIONS } = require("../../constants");
 const { authMiddleware } = require("../../middleware/auth.middleware");
 const checkPermission = require("../../middleware/checkPermission");
 
-// const upload = require("../../middleware/multer.middleware");
-// Define routes for category operations
-
 // Route to get a single category by its ID
 router.route("/:categoryId").get(category.findSingle);
 
@@ -18,7 +15,6 @@ router.route("/").get(category.findAll);
 
 // Route to create a new category
 // Requires admin authentication, sets abilities, and checks if the user can perform the 'create' action on 'Categories'
-// router.route("/").post(upload.single("image"), category.create);
 router
   .route("/")
   .post(
@@ -47,5 +43,4 @@ router
     category.deleteBrand
   );
 
-// Export the router to be used in other parts of the application
 module.exports = router;
