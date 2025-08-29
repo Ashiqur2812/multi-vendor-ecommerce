@@ -18,7 +18,7 @@ const paymentSchema = new Schema(
     order: {
       type: Schema.Types.ObjectId,
       ref: ModelRefNames.Order,
-      required: true,
+      required: [true, 'Order must be required'],
     },
 
     // Amount paid
@@ -71,6 +71,7 @@ const paymentSchema = new Schema(
   },
   {
     timestamps: true,
+    versionKey: false
   }
 );
 
