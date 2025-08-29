@@ -10,7 +10,6 @@ const limiter = rateLimit({
     status: 429,
     message: "To many request from this ip, please try again later",
   },
-  // store: ... , // Use an external store for consistency across multiple server instances.
 });
 
 module.exports = limiter;

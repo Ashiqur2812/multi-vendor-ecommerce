@@ -2,7 +2,6 @@ const config = require("../config/config");
 const { generateToken } = require("../libs/jwt.libs");
 
 const generateUserTokens = function (user, role) {
-  // console.log(user);
   const payload = {
     user_id: user?._id,
     email: user?.email,

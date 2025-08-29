@@ -11,8 +11,6 @@ const {
 // Import middleware and routes
 const middleware = require("./app/middleware");
 const routes = require("./routes");
-// Load Passport strategies
-// Apply middleware
 app.use(middleware);
 
 // Apply routes with API version

@@ -4,7 +4,6 @@ const http = require("http");
 const databaseConnection = require("./db/databaseConnection");
 const config = require("./config/config");
 const ApiError = require("./utils/ApiError");
-// const { connectRedis } = require("./config/redis.config");
 
 const PORT = config.PORT || 3030;
 const server = http.createServer(app);
@@ -20,7 +19,6 @@ const startServer = async () => {
       console.log(`Server is running at http://localhost:${PORT}`);
     });
   } catch (error) {
-    // Log a more detailed error message
     console.error("Error starting the server:");
     console.error(error.message);
     console.error(error);
