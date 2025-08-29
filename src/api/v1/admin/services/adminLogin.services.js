@@ -29,20 +29,10 @@ const adminLoginController = async (req, res) => {
     throw new ApiError(400, "Invalid credentials.");
   }
 
-  // If the email is not found in the database, throw an error message "Invalid credentials, email or password."
-  // This error message indicates that either the email provided is not registered or the combination of email and password is incorrect
-
-  // Compare the password provided by the admin with the stored password in the database
-  // This step involves verifying the password provided by the user against the hashed password stored in the database
   const comparePassword = await compareBcryptPassword(password, admin.password);
   if (!comparePassword) {
     throw new ApiError(400, "Invalid credentials, email or password.");
   }
-
-  // If the password matches:
-  // - Generate a admin access_token and save it into cookies for authentication
-  // - This access_token is typically a secure token used for subsequent authenticated requests
-  // - Storing it in cookies ensures persistence across requests and sessions
 
   const { accessToken, refreshToken } = generateUserTokens(admin, role);
 
@@ -64,7 +54,6 @@ const adminLoginController = async (req, res) => {
   ];
   res.cookie("refreshToken", refreshToken, options);
   res.cookie("accessToken", accessToken, options);
-  // eslint-disable-next-line no-unused-vars
   const { password: pass, ...data } = admin.toObject();
 
   return { accessToken, refreshToken, user: data, links };
