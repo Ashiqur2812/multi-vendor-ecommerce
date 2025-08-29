@@ -1,6 +1,3 @@
-/**
- * Class representing an API response.
- */
 class ApiResponse {
   /**
    * Constructor for ApiResponse class.
