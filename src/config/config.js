@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const _config = {
   BASE_URL: process.env.BASE_URL,
   PORT: process.env.PORT,
@@ -37,10 +36,6 @@ const _config = {
   CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME,
   CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY,
   CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET,
-
-  //   SSL_STORE_ID: process.env.SSL_STORE_ID,
-  //   SSL_STORE_PASSWORD: process.env.SSL_STORE_PASSWORD,
-  //   SSL_STORE_IS_LIVE: process.env.SSL_STORE_IS_LIVE,
 
   GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
