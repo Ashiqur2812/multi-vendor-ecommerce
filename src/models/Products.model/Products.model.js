@@ -12,7 +12,7 @@ const productSchema = new Schema(
   {
     title: {
       type: String,
-      required: true,
+      required: [true, 'Title must be required'],
       trim: true,
     },
 
@@ -195,7 +195,10 @@ const productSchema = new Schema(
       required: true,
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    versionKey: false
+  }
 );
 
 productSchema.pre("save", async function (next) {
