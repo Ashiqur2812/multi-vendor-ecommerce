@@ -5,8 +5,7 @@ const categorySchema = new Schema(
   {
     name: {
       type: String,
-      required: true,
-      // unique: true,
+      required: [true,'Name is required'],
       trim: true,
     },
     category_url: {
