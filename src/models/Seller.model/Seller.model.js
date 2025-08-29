@@ -13,7 +13,7 @@ const sellerSchema = new Schema(
   {
     name: {
       type: String,
-      required: true,
+      required: [true, 'Name must be required'],
       trim: true,
     },
     shopId: {
@@ -49,11 +49,11 @@ const sellerSchema = new Schema(
     },
     preferredCurrency: {
       type: String,
-      default: "USD", // Replace with your default currency
+      default: "USD", 
     },
     preferredLanguage: {
       type: String,
-      default: "en-US", // Replace with your default language
+      default: "en-US", 
     },
     newsletterSubscription: {
       type: Boolean,
@@ -96,12 +96,11 @@ const sellerSchema = new Schema(
     refreshToken: {
       type: String,
     },
-    // Add additional fields as needed, like:
-    // - logo: { type: String },
-    // - products: [{ type: Schema.Types.ObjectId, ref: 'Product' }],
-    // - ratings: [{ type: Schema.Types.ObjectId, ref: 'Rating' }],
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    versionKey: false
+  }
 );
 
 sellerSchema.pre("save", async function (next) {
