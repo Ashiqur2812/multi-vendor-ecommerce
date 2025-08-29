@@ -2,6 +2,7 @@ const router = require("express").Router();
 const reviewsRoutes = require("./reviews.routes/reviews.routes");
 const addressRoutes = require("./address.routes/address.routes");
 const userRoutes = require("./users.routes/users.routes");
+
 router.use("/users", [userRoutes, reviewsRoutes, addressRoutes]);
 
 // dashboard routes
