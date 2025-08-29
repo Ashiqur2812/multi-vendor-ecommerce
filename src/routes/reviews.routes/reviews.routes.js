@@ -1,5 +1,4 @@
 const router = require("express").Router();
-// const reviews = require("../../controller/comments.controller/comments.controller");
 const { authMiddleware } = require("../../middleware/auth.middleware");
 const checkPermission = require("../../middleware/checkPermission");
 const { controller: reviews } = require("../../api/v1/reviews");
@@ -9,10 +8,6 @@ const { ROLES, PERMISSIONS } = require("../../constants");
 router.route("/reviews").get(authMiddleware(ROLES.CUSTOMER), reviews.findAll);
 
 router.route("/reviews").post(authMiddleware(ROLES.CUSTOMER), reviews.create);
-
-// router
-//   .route("/reviews/:reviewId")
-//   .get(authMiddleware(ROLES.CUSTOMER), reviews.findSingle);
 
 router
   .route("/reviews/:reviewId")
