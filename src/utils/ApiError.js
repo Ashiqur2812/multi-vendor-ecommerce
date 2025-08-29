@@ -1,8 +1,3 @@
-/**
- * Custom Error class for API errors.
- * Inherits from the built-in Error class.
- */
-
 class ApiError extends Error {
   /**
    * Constructor for ApiError class.
