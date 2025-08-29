@@ -5,7 +5,7 @@ const reviewSchema = new Schema(
     // Content of the comment
     content: {
       type: String,
-      required: true,
+      required: [true, 'Content must be required'],
       minLength: 5,
       maxLength: 500,
     },
@@ -37,6 +37,7 @@ const reviewSchema = new Schema(
   },
   {
     timestamps: true,
+    versionKey: false
   }
 );
 
