@@ -1,18 +1,4 @@
 const router = require("express").Router();
-
-// const moduleRoutes=[
-//     {
-//         path:"/dashboard",
-//         route:require("./dashboard.routes/dashboard.routes")
-//     },
-//     {
-//         path:"/users",
-//         route:require("./users.routes/users.routes")
-//     },
-
-// ]
-
-// user routes, [reviews, address]
 const reviewsRoutes = require("./reviews.routes/reviews.routes");
 const addressRoutes = require("./address.routes/address.routes");
 const userRoutes = require("./users.routes/users.routes");
@@ -67,9 +53,5 @@ router.use("/seller", sellerRoutes);
 // defined a store routers
 const storeRoutes = require("./store.routes/store.routes");
 router.use("/stores", storeRoutes);
-
-// moduleRoutes.forEach(module=>{
-//     router.use(module.path,module.route)
-// })
 
 module.exports = router;
