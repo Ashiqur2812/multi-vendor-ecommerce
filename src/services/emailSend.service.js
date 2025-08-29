@@ -13,20 +13,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Initialize nodemailer transporter
-// const transporter = nodemailer.createTransport({
-//   host: config.EMAIL_SERVICE, // host for mailtrap
-//   port: config.EMAIL_PORT,
-//   // secure: true,
-//   auth: {
-//     user: config.EMAIL_USERNAME,
-//     pass: config.EMAIL_PASSWORD,
-//   },
-// });
-
-// For more info on how mailgen content work visit https://github.com/eladnava/mailgen#readme
-// Generate the plaintext version of the e-mail (for clients that do not support HTML)
-
 // Initialize Mailgen instance for generating email templates
 const mailGenerator = new Mailgen({
   theme: "default",
@@ -50,7 +36,6 @@ async function sendEmail(options) {
   // Send email with defined transport object
   const info = await transporter.sendMail({
     from: `"Sole Mound 👻"${config.USER_EMAIL}`, // sender address
-    // from: `"Google"<mail.noreply@gmail.com>`, // sender address
     to: options.email, // Recipient(s) address
     subject: options.subject, /// Email subject
     text: emailTextual, // Plain text body
@@ -103,8 +88,6 @@ const forgotPasswordMailgenContent = (username, OTP) => {
         button: {
           //   color: "#e11d48", // Action button color
           text: "Your OTP is " + `<h1><strong>${OTP}</strong></h1>`,
-
-          //   link: OTP, // Password reset URL
         },
       },
       outro:
@@ -123,8 +106,6 @@ const emailOTPVerificationMailgenContent = (username, OTP) => {
         button: {
           //   color: "#e11d48", // Action button color
           text: "Your OTP is " + `<h1><strong>${OTP}</strong></h1>`,
-
-          //   link: OTP, // Password reset URL
         },
       },
       outro:
