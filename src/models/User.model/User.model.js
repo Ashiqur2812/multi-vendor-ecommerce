@@ -26,7 +26,6 @@ const userSchema = new Schema(
     email: {
       type: String,
       required: true,
-      // unique: true,
       trim: true,
       lowercase: true,
       validate: {
@@ -97,11 +96,6 @@ const userSchema = new Schema(
     isDeleted: {
       type: Boolean,
     },
-    // isActive: {
-    //   type: Boolean,
-    //   enum: AvailableUserStatus,
-    //   // default: UserStatusEnum.ACTIVE,
-    // },
     status: {
       type: String,
       enum: AvailableUserStatus,
@@ -125,7 +119,6 @@ const userSchema = new Schema(
 
     verificationCode: {
       type: String,
-      // unique: true,
       index: true,
     },
     verificationCodeExpiry: {
@@ -136,7 +129,10 @@ const userSchema = new Schema(
       type: String,
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    versionKey: false
+  }
 );
 
 // this function do password hashing using bcrypt.
