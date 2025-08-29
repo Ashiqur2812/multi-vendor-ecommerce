@@ -12,7 +12,6 @@ const retrieveAddressController = asyncHandler(async (req, res) => {
   }
 
   const host = `${req.myHost}${ApiVersion}`;
-  // Creating HATEOAS links for each address
   const links = [
     {
       rel: "create",

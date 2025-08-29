@@ -23,7 +23,6 @@ const findSingleAddressController = asyncHandler(async (req, res) => {
     throw new ApiError(404, "Address not found");
   }
 
-  // Creating HATEOAS links for the retrieved address
   const host = `${req.myHost}${ApiVersion}`;
 
   const links = [
