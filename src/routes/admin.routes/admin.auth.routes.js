@@ -8,6 +8,5 @@ router.route("/auth/login").post(adminAuth.login);
 router
   .route("/auth/signup")
   .post(authMiddleware(ROLES.ADMIN, ROLES.SUPER_ADMIN), adminAuth.signup);
-// router.route("/auth/logout").post();
 
 module.exports = router;

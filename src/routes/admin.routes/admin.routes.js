@@ -61,8 +61,6 @@ router
     roles.deleteRole
   );
 router.route("/roles/:id").patch(
-  //  authMiddleware(ROLES.ADMIN, ROLES.SUPER_ADMIN),
-  // checkPermission({ permission: "update_roles" }),
   roles.updateRole
 );
 
