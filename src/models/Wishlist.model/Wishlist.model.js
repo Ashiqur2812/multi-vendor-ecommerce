@@ -5,20 +5,22 @@ const wishlistSchema = new Schema(
     user: {
       type: Schema.Types.ObjectId,
       required: true,
-      ref: ModelRefNames.User, // Replace 'User' with your User model name
+      ref: ModelRefNames.User,
     },
     products: {
       type: Schema.Types.ObjectId,
       required: true,
-      ref: ModelRefNames.Product, // Replace 'Product' with your Product model name
-      sparse: true, // Exclude empty product references (optional)
+      ref: ModelRefNames.Product,
+      sparse: true,
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    versionKey: false
+  }
 );
 
 wishlistSchema.pre("save", async function (next) {
-  // Optional: Handle nested validation or custom logic here
   next();
 });
 
